@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Student Management</a>
+                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add_student">Add Student</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/view_students">View Students</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search_student">Search Student</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+        <h2 class="text-center text-primary">Edit Student</h2>
+        <div class="container  text-center mt-5">
+            <form action="/update_student/{{ student[0] }}" method="POST">
+
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ student[1] }}" required>
+                <br>
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{ student[2] }}" required>
+                <br>
+                <label for="course" class="form-label">Course:</label>
+                <input type="text" class="form-control" id="course" name="course" value="{{ student[3] }}" required>
+                <br>
+                <div class="text-center mt-4"></div>
+                <button type="submit" class="btn btn-primary">Update Student</button>
+        </div>
+        </form>
+        </div>
+        </main>
+        </body>
+        <footer class="bg-dark text-white text-center py-3 mt-5">
+            Student Management System © 2026 | Developed by Nuved Khan
+        </footer>
+
+
+</html>

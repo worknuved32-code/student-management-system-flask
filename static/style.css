@@ -1,0 +1,41 @@
+body{
+    background-color: #faf9f8;
+}
+.hero-section{
+    text-align: center;
+    padding: 50px 0;
+}
+.hero-section h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.hero-section p{
+    font-size: 1.2rem;
+    color: gray;
+}
+
+
+.st_count {
+color: rgb(0, 153, 255);
+}
+.card{
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+.navbar{
+    padding: 12px 0;
+}
+
+.navbar-brand{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.nav-link{
+    font-size: 1.05rem;
+    margin-left: 12px;
+}
