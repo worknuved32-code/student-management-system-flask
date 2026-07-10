@@ -54,7 +54,10 @@ def search_student():
 @app.route("/search_student",methods=["POST"])
 def search_student_post():
     name = request.form.get("name")
-    c.execute("SELECT * FROM students WHERE name=?", (name,))
+    c.execute(
+    "SELECT * FROM students WHERE name LIKE ? COLLATE NOCASE",
+    ('%' + name + '%',)
+    )
     students = c.fetchall()
     return render_template("student_results.html", students=students)
 @app.route("/delete_student/<int:student_id>")
